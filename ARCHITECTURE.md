@@ -28,6 +28,8 @@ Code as documentation — names and structure must be self-explanatory. Comments
 [replace this block with your diagram]
 ```
 
+_Last verified: YYYY-MM-DD_
+
 ---
 
 ## Components
@@ -37,6 +39,8 @@ Code as documentation — names and structure must be self-explanatory. Comments
 | Component | Responsibility | Key interface |
 |---|---|---|
 | | | |
+
+_Last verified: YYYY-MM-DD_
 
 ---
 
@@ -48,6 +52,8 @@ Code as documentation — names and structure must be self-explanatory. Comments
 |---|---|---|
 | | | |
 
+_Last verified: YYYY-MM-DD_
+
 ---
 
 ## Constraints
@@ -55,3 +61,5 @@ Code as documentation — names and structure must be self-explanatory. Comments
 <!-- Non-negotiable limits on the system. Examples: platform requirements, runtime environment, compliance rules, external service dependencies, licensing. -->
 
 -
+
+_Last verified: YYYY-MM-DD_
