@@ -24,13 +24,14 @@ Must complete before writing implementation code that depends on external interf
 ### Tasks
 
 <!-- Precede each implementation task with its test task. Done = verification statement is true. -->
+<!-- File paths must use the language/runtime declared in CLAUDE.md Conventions. Decide that before filling in paths. -->
 
-- [ ] `tests/[module]/test_[unit].py`
-  - [test case description]
-  - [test case description]
 - [ ] `[source file]`
   - [implementation note]
   - [implementation note]
+- [ ] `tests/[module]/[test file]`
+  - [test case description]
+  - [test case description]
 
 **Verification:** [concrete, observable statement that proves this phase is done — e.g. "X tests pass; live call returns Y"]
 
