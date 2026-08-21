@@ -9,6 +9,7 @@
 3. Scan `IMPLEMENTATION.md` checkboxes — first unchecked task is current state
 4. Check open GitHub issues for failures and decisions
 5. Search memory for relevant prior knowledge
+6. Locate the project in the operating cycle (`CYCLE.md`) — which step is current?
 
 ## Conventions
 
@@ -18,5 +19,6 @@ REQUIRED before writing any file paths in IMPLEMENTATION.md:
 - If polyglot: where the language boundary is and why
 - Test runner and invocation command — e.g. "Vitest: npx vitest", "pytest: python -m pytest"
 - Formatting / linting rules
+- Scope position per docs/scope.md — updated by cycle step 1 (Orient)
 - Any deviations from METHODOLOGY.md that this project has accepted and why
 -->
