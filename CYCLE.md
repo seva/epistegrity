@@ -66,11 +66,20 @@ An atomic task succeeds iff all five hold. Success is a decidable conjunction, n
 
 ---
 
+## Autonomy
+
+The cycle is self-sufficient by default: no step may require owner action or externally provisioned resources. When a step appears blocked on an external dependency, the dependency is inverted — the production surface is generated or reused by the project itself — before the step may be declared blocked.
+
+The owner stands outside the cycle as its legislative layer and may sanction exceptions by prompt. A sanctioned prompt is an auditable constitutional act and the only legitimate path by which an external dependency enters the cycle. Every sanction is recorded on the relevant issue. Absent sanction, the cycle never stalls on external provisioning.
+
+---
+
 ## Selection function (compressed)
 
 ```
 next_step = argmax  RAROC(s)   over   s ∈ feasible
-feasible  = { s : advances scope position ∧ passes phase gate ∧ atomic }
+feasible  = { s : advances scope position ∧ passes phase gate ∧ atomic
+                ∧ requires no unsanctioned external dependency }
 proof     = working in production ∧ expected RAROC actively demonstrated
 ```
 

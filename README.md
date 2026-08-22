@@ -11,7 +11,7 @@ This repo is not a framework or a library. It is a set of files that, when copie
 | File | Purpose |
 |---|---|
 | `METHODOLOGY.md` | The rules. Session protocol, commit discipline, failure handling, WaLRuS-DATA format, TDD, artifact taxonomy. Copy verbatim — no project-specific content. |
-| `CYCLE.md` | The operating loop. Orient → Decide → Execute → Audit → Repair → Repeat. RAROC step selection, Definition of Success (proof = working solution in production demonstrating expected RAROC). Copy verbatim — no project-specific content. |
+| `CYCLE.md` | The operating loop. Orient → Decide → Execute → Audit → Repair → Repeat. RAROC step selection, Definition of Success (proof = working solution in production demonstrating expected RAROC), autonomy as the default regime with owner-sanctioned exceptions. Copy verbatim — no project-specific content. |
 | `ARCHITECTURE.md` | Universal principles + placeholder sections for system diagram, components, design decisions, and constraints. Fill in as the system takes shape. |
 | `IMPLEMENTATION.md` | Phase gate structure. Phase 0 = discovery. Phase N = implementation with test-first tasks and a verification statement. |
 | `CLAUDE.md` | Session bootstrap. One sentence describing the system, the start protocol, and a slot for project conventions. |
@@ -38,4 +38,4 @@ From that point: every session starts with `CLAUDE.md`, work proceeds by `CYCLE.
 
 Distilled from [`grok-research-mcp`](https://github.com/seva/grok-research-mcp) — a completed MCP server project that developed this methodology organically across its implementation phases. The patterns here are what worked: what kept sessions coherent, what kept the failure record legible, and what kept an AI agent on track across context boundaries.
 
-`CYCLE.md` and `docs/scope-TEMPLATE.md` were extracted back from [`law-and-order`](https://github.com/seva/law-and-order) — the first downstream instantiation — where the operating loop, RAROC step selection, and the production-RAROC definition of proof were developed and exercised.
+`CYCLE.md` and `docs/scope-TEMPLATE.md` were extracted back from [`law-and-order`](https://github.com/seva/law-and-order) — the first downstream instantiation — where the operating loop, RAROC step selection, and the production-RAROC definition of proof were developed and exercised. The autonomy doctrine and owner-sanction rule were extracted back in a second round, after live operation exposed a blocked dependency and the dependency was inverted.
