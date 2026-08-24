@@ -34,8 +34,16 @@ From that point: every session starts with `CLAUDE.md`, work proceeds by `CYCLE.
 
 ---
 
+## Versioning the scaffold
+
+The protocol files evolve by extraction: downstream instances develop patterns under live operation, and the generalizable ones are distilled back here. Instances track the scaffold version they operate under with a `.epistegrity-version` file at their root containing the upstream commit SHA.
+
+Pin discipline: a `.epistegrity-version` bump is one commit unit that syncs every verbatim protocol file (`METHODOLOGY.md`, `CYCLE.md`, templates) to the pinned tree, or declares the deviation explicitly. Verify by blob SHA — `git hash-object` on the local file must equal the upstream blob SHA at the pinned ref. A pin that asserts a state the files do not have is drift, not versioning.
+
+---
+
 ## Origin
 
 Distilled from [`grok-research-mcp`](https://github.com/seva/grok-research-mcp) — a completed MCP server project that developed this methodology organically across its implementation phases. The patterns here are what worked: what kept sessions coherent, what kept the failure record legible, and what kept an AI agent on track across context boundaries.
 
-`CYCLE.md` and `docs/scope-TEMPLATE.md` were extracted back from [`law-and-order`](https://github.com/seva/law-and-order) — the first downstream instantiation — where the operating loop, RAROC step selection, and the production-RAROC definition of proof were developed and exercised. The autonomy doctrine and owner-sanction rule were extracted back in a second round, after live operation exposed a blocked dependency and the dependency was inverted.
+`CYCLE.md` and `docs/scope-TEMPLATE.md` were extracted back from [`law-and-order`](https://github.com/seva/law-and-order) — the first downstream instantiation — where the operating loop, RAROC step selection, and the production-RAROC definition of proof were developed and exercised. The autonomy doctrine and owner-sanction rule were extracted back in a second round, after live operation exposed a blocked dependency and the dependency was inverted. A third round extracted the claims-vs-evidence audit step, scaffold pin discipline, and the sanction-is-permission interpretation — after an audit found a falsified claim that internal-consistency checks could not see, a pin bump drifted from its own files, and a gap analysis misread sanction as owner labor.
