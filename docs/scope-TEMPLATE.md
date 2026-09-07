@@ -43,7 +43,7 @@ Established YYYY-MM-DD. Strategy artifact: the ladder this project climbs. Orien
 |---|---|
 | | |
 
-| Commitment class | Refinement set (HORIZONS.md) | Terms below the cut, registered non-drifting |
+| Commitment class | Refinement level (PRAROC-n, HORIZONS.md) | Terms below the cut, registered non-drifting |
 |---|---|---|
 | | | |
 

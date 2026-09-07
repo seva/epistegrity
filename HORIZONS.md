@@ -1,5 +1,7 @@
 # Horizons
 
+**PRAROC-7** — Progressive RAROC. The P is the process: progression *is* the paradigm, so the numeral is a bound, not an obligation. The ladder tops at seven positions; a commitment class runs at PRAROC-n, n set by what the commitment costs (refinement rule below). Reading 7 as a version or as the default set is the drift this line exists to kill.
+
 Doctrine for bounded operators: commitments drift, readings expire, and some margin is not recoverable. `CYCLE.md` selects and ranks; this file governs what may never be spent and what is excluded before any ranking runs. Copy verbatim. Canonical prose: `docs/praroc-paradigm.md`. Per-project compiled constraints: `docs/scope.md` (Terminal bound section).
 
 ---
