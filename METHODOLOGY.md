@@ -7,6 +7,8 @@
 | Artifact | Purpose |
 |---|---|
 | `CLAUDE.md` | Session bootstrap |
+| `CYCLE.md` | Operating loop — step selection, Definition of Success, autonomy |
+| `ROLES.md` | Role separation — Steward, Critic, Auditor, Owner; no role grades itself |
 | `IMPLEMENTATION.md` | Task state — checkboxes updated in place |
 | GitHub issue per phase | Failure record — comments capture attempts and decisions |
 | `docs/` outputs | Phase 0 discovery artifacts — hard gates for dependent phases |
@@ -75,8 +77,9 @@ After each phase completion, before writing the WaLRuS, audit the current projec
 2. **Coverage** — run coverage; classify uncovered lines as *Acceptable* (document why) or *Gap* (add test)
 3. **Cross-cutting** — scan for placeholder content, missing `.gitignore` entries, undocumented error types
 4. **Declared claims vs evidence** — every constitutional statement that asserts something about the world (assumptions, measured numbers, verification dates) is checked against the project's evidence (`docs/`, issues, runs); stale or falsified claims are corrected in the same commit as the falsifying evidence, or marked open
+5. **Engineering invariants** — scan new and changed code against `ARCHITECTURE.md` Engineering Invariants and Banned Patterns; violations are closed or declared as documented deviations in `CLAUDE.md` Conventions
 
-Steps 1–3 check internal consistency (code↔records); step 4 checks external consistency (claims↔world). Internal consistency alone cannot catch a claim that survives its own falsification.
+Items 1–3 and 5 check internal consistency (code↔records↔constitution); item 4 checks external consistency (claims↔world). Internal consistency alone cannot catch a claim that survives its own falsification.
 
 Gaps must be closed or classified before the WaLRuS is written. The audit is a gate, not a suggestion.
 
@@ -112,7 +115,10 @@ Tests are written before implementation code. Done means tests pass, not code wr
 - Test files mirror source structure
 - Each implementation task is preceded by a test task in `IMPLEMENTATION.md`
 - Phase 0 (discovery) is exempt — no implementation code
+- Spike code (throwaway exploration) is permitted during discovery only; contracts discovered by spiking are frozen, and tests are written against the frozen contract. Spikes never merge to main.
 - "Done" = the verification statement at the bottom of the phase is true
+
+**Test authenticity.** Tests execute against real ephemeral dependencies (containerized or disposable databases, queues, caches). Mocks are restricted to external third-party APIs. Tautological tests — asserting the call behavior of internal mocks — are banned. Coverage targets apply only to the invariants declared critical (financial, security, state-machine transitions), never as an aggregate line threshold.
 
 ---
 

@@ -10,6 +10,7 @@
 4. Check open GitHub issues for failures and decisions
 5. Search memory for relevant prior knowledge
 6. Locate the project in the operating cycle (`CYCLE.md`) — which step is current?
+7. Identify your role (`ROLES.md`; default Steward) and the declared role instances — no role grades its own work
 
 ## Conventions
 
@@ -20,5 +21,6 @@ REQUIRED before writing any file paths in IMPLEMENTATION.md:
 - Test runner and invocation command — e.g. "Vitest: npx vitest", "pytest: python -m pytest"
 - Formatting / linting rules
 - Scope position per docs/scope.md — updated by cycle step 1 (Orient)
-- Any deviations from METHODOLOGY.md that this project has accepted and why
+- Role instances per ROLES.md — what fills Steward, Critic, Auditor, Owner (distinct instances; a role filled by the same instance as another is void)
+- Any deviations from the constitution (METHODOLOGY.md, CYCLE.md, ARCHITECTURE.md Engineering Invariants) that this project has accepted and why
 -->

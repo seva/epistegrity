@@ -42,6 +42,7 @@ Post-Phase Audit procedure (METHODOLOGY.md), generalized, executed per the role 
 2. Coverage run; uncovered lines classified *Acceptable* or *Gap*
 3. Cross-cutting: placeholders, `.gitignore`, record sync (issues ↔ `IMPLEMENTATION.md`), session-protocol compliance
 4. Declared claims versus evidence: constitutional statements about the world (assumptions, measured numbers, verification dates) checked against `docs/` and issue evidence; stale or falsified claims corrected or marked open
+5. Engineering invariants: new and changed code scanned against `ARCHITECTURE.md` Engineering Invariants and Banned Patterns; violations closed or declared as deviations
 
 Output: classified gap list. Zero gaps is the only passing state.
 
