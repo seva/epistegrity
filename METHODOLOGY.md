@@ -6,7 +6,7 @@
 
 | Artifact | Purpose |
 |---|---|
-| `CLAUDE.md` | Session bootstrap |
+| `AGENTS.md` | Session bootstrap |
 | `CYCLE.md` | Operating loop — step selection, Definition of Success, autonomy |
 | `HORIZONS.md` | Horizon doctrine — terminal bound, filter-before-rank, profile-not-total, marginal allocation, error signatures |
 | `ROLES.md` | Role separation — Steward, Critic, Auditor, Owner; no role grades itself |
@@ -19,7 +19,7 @@
 
 ## Session Protocol
 
-**Start:** Read `CLAUDE.md` → open linked GitHub issue → scan `IMPLEMENTATION.md` checkboxes.
+**Start:** Read `AGENTS.md` → open linked GitHub issue → scan `IMPLEMENTATION.md` checkboxes.
 
 **End:** Update checkboxes + post one comment to the open issue (what was tried, what was found, what's next).
 
@@ -67,20 +67,20 @@ Discovery outputs (Phase 0) are hard prerequisites for implementation phases. No
 - **Issue comments** — everything else: failed attempts, decisions, partial findings, blockers.
 - **`docs/`** — structured discovery outputs. Committed, permanent, readable by any session.
 - **`docs/scope.md`** — standing strategy artifact. Scope ladder, terminal form, compiled terminal-bound constraints (HORIZONS.md). Updated by Orient and by Revision; never provisional.
-- **`CLAUDE.md`** — current phase pointer only. Updated when phase changes.
+- **`AGENTS.md`** — current phase pointer only. Updated when phase changes.
 - **`docs/walrus-YYYY-MM-DD.md`** — WaLRuS-DATA session summary. Written at session end, committed.
 
 ---
 
 ## Post-Phase Audit
 
-After each phase completion, before writing the WaLRuS, audit the current project state against the constitution — `CLAUDE.md`, `METHODOLOGY.md`, `ARCHITECTURE.md`, `IMPLEMENTATION.md`.
+After each phase completion, before writing the WaLRuS, audit the current project state against the constitution — `AGENTS.md`, `METHODOLOGY.md`, `ARCHITECTURE.md`, `IMPLEMENTATION.md`.
 
 1. **ARCHITECTURE.md** — verify every component's key interface matches current code signatures
 2. **Coverage** — run coverage; classify uncovered lines as *Acceptable* (document why) or *Gap* (add test)
 3. **Cross-cutting** — scan for placeholder content, missing `.gitignore` entries, undocumented error types
 4. **Declared claims vs evidence** — every constitutional statement that asserts something about the world (assumptions, measured numbers, verification dates) is checked against the project's evidence (`docs/`, issues, runs); stale or falsified claims are corrected in the same commit as the falsifying evidence, or marked open
-5. **Engineering invariants** — scan new and changed code against `ARCHITECTURE.md` Engineering Invariants and Banned Patterns; violations are closed or declared as documented deviations in `CLAUDE.md` Conventions
+5. **Engineering invariants** — scan new and changed code against `ARCHITECTURE.md` Engineering Invariants and Banned Patterns; violations are closed or declared as documented deviations in `AGENTS.md` Conventions
 6. **Horizon integrity** — error-signature scan per `HORIZONS.md`: override (continuation without a successor forecast), unbounded terminal position, level-versus-margin comparisons in the decision record, stale decomposition (repairs locally successful, gap class recurring)
 
 Items 1–3 and 5 check internal consistency (code↔records↔constitution); item 4 checks external consistency (claims↔world); item 6 checks the plan against the horizon doctrine. Internal consistency alone cannot catch a claim that survives its own falsification.

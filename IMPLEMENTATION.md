@@ -24,8 +24,8 @@ Must complete before writing implementation code that depends on external interf
 ### Tasks
 
 <!-- TDD order: test task FIRST, then implementation task. -->
-<!-- File paths must use the language/runtime declared in CLAUDE.md Conventions. Decide that before filling in paths. -->
-<!-- Test file naming follows the test runner convention declared in CLAUDE.md (e.g. *.test.ts for Vitest, test_*.py for pytest). -->
+<!-- File paths must use the language/runtime declared in AGENTS.md Conventions. Decide that before filling in paths. -->
+<!-- Test file naming follows the test runner convention declared in AGENTS.md (e.g. *.test.ts for Vitest, test_*.py for pytest). -->
 
 - [ ] `tests/[module]/[test file]`
   - [test case description]

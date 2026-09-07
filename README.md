@@ -13,10 +13,10 @@ This repo is not a framework or a library. It is a set of files that, when copie
 | `METHODOLOGY.md` | The rules. Session protocol, commit discipline, failure handling, WaLRuS-DATA format, TDD with test authenticity, four-item post-phase audit, artifact taxonomy. Copy verbatim — no project-specific content. |
 | `CYCLE.md` | The operating loop. Orient → Decide → Execute → Audit → Repair → Repeat. RAROC step selection over feasible/choosable splits with decomposability, sanction surfacing, filter-before-rank at the terminal bound, marginal-not-level scoring, and Revision escalation from Repair. Definition of Success (proof = working solution in production demonstrating expected RAROC), autonomy as the default regime with owner-sanctioned exceptions, disposition as a legislative act. Copy verbatim — no project-specific content. |
 | `HORIZONS.md` | Horizon doctrine — PRAROC-7 (Progressive RAROC; the P is the process, 7 is the ladder's bound: commitment classes run at PRAROC-n, n set by commitment cost). Refinement ladder, checkable claims and expiring readings, the terminal bound derived once and compiled, filter-before-rank on non-convertible denominators, profile-not-total, marginal allocation, set 5/7 mechanics, error signatures as an audit checklist. Copy verbatim; canonical prose in `docs/praroc-paradigm.md`; compiled constraints in `docs/scope.md`. |
-| `ROLES.md` | Role separation. Steward executes, Critic falsifies, Auditor verifies, Owner legislates — no role grades its own work. Copy verbatim; instances declared in `CLAUDE.md` Conventions. |
+| `ROLES.md` | Role separation. Steward executes, Critic falsifies, Auditor verifies, Owner legislates — no role grades its own work. Copy verbatim; instances declared in `AGENTS.md` Conventions. |
 | `ARCHITECTURE.md` | Engineering invariants (boundary defense, re-entrant mutations, expand/contract, vertical slice locality, indirection cap) + banned patterns + placeholder sections for system diagram, components, design decisions, and constraints. Fill in as the system takes shape. |
 | `IMPLEMENTATION.md` | Phase gate structure. Phase 0 = discovery. Phase N = implementation with test-first tasks and a verification statement. |
-| `CLAUDE.md` | Session bootstrap. One sentence describing the system, the start protocol (including role identification), and a slot for project conventions and accepted deviations. |
+| `AGENTS.md` | Session bootstrap. One sentence describing the system, the start protocol (including role identification), and a slot for project conventions and accepted deviations. AGENTS.md is the vendor-neutral standard runners load natively; if your runner only reads its own brand file (`CLAUDE.md`, `GEMINI.md`, …), create that file as a one-line pointer — `Read and follow AGENTS.md — it is this project's session bootstrap.` Never duplicate the content: two bootstrap files is a drift vector. |
 | `docs/scope-TEMPLATE.md` | Blank maximal-scope template. Copy to `docs/scope.md` and fill in: maximal mission, scope ladder, terminal form, terminal bound (compiled constraints, irrecoverable margins, refinement level per commitment class). Orient measures the status quo against it. |
 | `docs/praroc-paradigm.md` | The Progressive RAROC paradigm (PRAROC-7) in full — reference doctrine behind `HORIZONS.md`: position sets and split signals, cases (codebase, role, enterprise), mnemonic, distilled rules. Copied for reference; never instantiated. |
 | `docs/walrus-TEMPLATE.md` | Blank WaLRuS-DATA template. Copy to `docs/walrus-YYYY-MM-DD.md` at the end of any significant session. |
@@ -27,13 +27,13 @@ This repo is not a framework or a library. It is a set of files that, when copie
 ## How to instantiate
 
 1. Copy all files into the root of your project (create `docs/` if it doesn't exist).
-2. Edit `CLAUDE.md`: replace `[Project Name]` and the one-line description. Fill in the Conventions section, including the role instances (`ROLES.md`) and any accepted constitution deviations.
+2. Edit `AGENTS.md`: replace `[Project Name]` and the one-line description. Fill in the Conventions section, including the role instances (`ROLES.md`) and any accepted constitution deviations. If your runner reads a brand-specific bootstrap file, create it as a one-line pointer to `AGENTS.md`.
 3. Copy `docs/scope-TEMPLATE.md` to `docs/scope.md` and fill it in: maximal mission, the scope ladder to the universal level, terminal form, and the terminal bound — derived once, compiled into standing constraints, never consulted at the decision point.
 4. Edit `IMPLEMENTATION.md`: replace Phase 0 and Phase N placeholders with your actual phases and tasks.
 5. Edit `ARCHITECTURE.md`: fill in the System Diagram, Components, and Constraints sections as you discover them.
 6. Leave `METHODOLOGY.md`, `CYCLE.md`, `HORIZONS.md`, `ROLES.md`, `docs/praroc-paradigm.md`, and the templates verbatim — they are shared protocol, not project-specific content.
 
-From that point: every session starts with `CLAUDE.md`, work proceeds by `CYCLE.md`, and every session ends with a WaLRuS-DATA file.
+From that point: every session starts with `AGENTS.md`, work proceeds by `CYCLE.md`, and every session ends with a WaLRuS-DATA file.
 
 ---
 
@@ -42,6 +42,8 @@ From that point: every session starts with `CLAUDE.md`, work proceeds by `CYCLE.
 The protocol files evolve by extraction: downstream instances develop patterns under live operation, and the generalizable ones are distilled back here. Instances track the scaffold version they operate under with a `.epistegrity-version` file at their root containing the upstream commit SHA.
 
 Pin discipline: a `.epistegrity-version` bump is one commit unit that syncs every verbatim protocol file (`METHODOLOGY.md`, `CYCLE.md`, `HORIZONS.md`, `ROLES.md`, `docs/praroc-paradigm.md`, templates) to the pinned tree, or declares the deviation explicitly. Verify by blob SHA — `git hash-object` on the local file must equal the upstream blob SHA at the pinned ref. A pin that asserts a state the files do not have is drift, not versioning.
+
+Breaking change: the bootstrap file was renamed `CLAUDE.md` → `AGENTS.md`. Instances pinned before the rename keep `CLAUDE.md` — it stays valid at their pinned tree; the bump that crosses the rename renames the file and updates its references.
 
 ---
 

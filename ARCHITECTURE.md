@@ -22,7 +22,7 @@ Code as documentation — names and structure must be self-explanatory. Comments
 
 ## Engineering Invariants
 
-Enforced at audit (METHODOLOGY.md Post-Phase Audit, item 5). Deviations must be declared in `CLAUDE.md` Conventions with rationale — undeclared violations are gaps.
+Enforced at audit (METHODOLOGY.md Post-Phase Audit, item 5). Deviations must be declared in `AGENTS.md` Conventions with rationale — undeclared violations are gaps.
 
 **Boundary defense** — all untrusted input (HTTP parameters and bodies, queue messages, environment variables, files from other systems) passes a runtime schema parser at the ingestion boundary. Internal code trusts validated contracts and omits redundant defensive checks for guaranteed fields. Never pass unvalidated dynamic types into domain functions.
 

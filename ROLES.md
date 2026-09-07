@@ -27,4 +27,4 @@ The Critic and Auditor run at step-completion by default. Escalate to per-step r
 
 Roles are virtual; instances are concrete. An instance may be a subagent, a separate model, or a human. The stronger the separation — distinct context, distinct model, distinct substrate — the stronger the review. A role filled by the same instance that fills another is a role in name only, and its review is void.
 
-Project role instances are declared in `CLAUDE.md` Conventions.
+Project role instances are declared in `AGENTS.md` Conventions.
