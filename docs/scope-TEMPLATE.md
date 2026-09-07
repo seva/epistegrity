@@ -35,6 +35,20 @@ Established YYYY-MM-DD. Strategy artifact: the ladder this project climbs. Orien
 
 ---
 
+## Terminal bound
+
+<!-- Derived once, compiled into standing constraints, compared against the reading each Orient — never consulted at the decision point (HORIZONS.md). Name the irrecoverable margins that may never be traded for recoverable return, and the refinement level each commitment class runs at. A term assumed non-drifting is registered here explicitly. -->
+
+| Compiled constraint | Irrecoverable margin it protects |
+|---|---|
+| | |
+
+| Commitment class | Refinement set (HORIZONS.md) | Terms below the cut, registered non-drifting |
+|---|---|---|
+| | | |
+
+---
+
 ## Terminal form
 
 <!-- What the world looks like when the mission completes. If the project succeeds fully, what becomes unnecessary? -->

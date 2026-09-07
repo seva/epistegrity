@@ -8,6 +8,7 @@
 |---|---|
 | `CLAUDE.md` | Session bootstrap |
 | `CYCLE.md` | Operating loop — step selection, Definition of Success, autonomy |
+| `HORIZONS.md` | Horizon doctrine — terminal bound, filter-before-rank, profile-not-total, marginal allocation, error signatures |
 | `ROLES.md` | Role separation — Steward, Critic, Auditor, Owner; no role grades itself |
 | `IMPLEMENTATION.md` | Task state — checkboxes updated in place |
 | GitHub issue per phase | Failure record — comments capture attempts and decisions |
@@ -78,8 +79,9 @@ After each phase completion, before writing the WaLRuS, audit the current projec
 3. **Cross-cutting** — scan for placeholder content, missing `.gitignore` entries, undocumented error types
 4. **Declared claims vs evidence** — every constitutional statement that asserts something about the world (assumptions, measured numbers, verification dates) is checked against the project's evidence (`docs/`, issues, runs); stale or falsified claims are corrected in the same commit as the falsifying evidence, or marked open
 5. **Engineering invariants** — scan new and changed code against `ARCHITECTURE.md` Engineering Invariants and Banned Patterns; violations are closed or declared as documented deviations in `CLAUDE.md` Conventions
+6. **Horizon integrity** — error-signature scan per `HORIZONS.md`: override (continuation without a successor forecast), unbounded terminal position, level-versus-margin comparisons in the decision record, stale decomposition (repairs locally successful, gap class recurring)
 
-Items 1–3 and 5 check internal consistency (code↔records↔constitution); item 4 checks external consistency (claims↔world). Internal consistency alone cannot catch a claim that survives its own falsification.
+Items 1–3 and 5 check internal consistency (code↔records↔constitution); item 4 checks external consistency (claims↔world); item 6 checks the plan against the horizon doctrine. Internal consistency alone cannot catch a claim that survives its own falsification.
 
 Gaps must be closed or classified before the WaLRuS is written. The audit is a gate, not a suggestion.
 

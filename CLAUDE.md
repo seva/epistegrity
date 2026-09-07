@@ -21,6 +21,7 @@ REQUIRED before writing any file paths in IMPLEMENTATION.md:
 - Test runner and invocation command — e.g. "Vitest: npx vitest", "pytest: python -m pytest"
 - Formatting / linting rules
 - Scope position per docs/scope.md — updated by cycle step 1 (Orient)
+- Compiled terminal-bound constraints per docs/scope.md and refinement level per commitment class (HORIZONS.md) — the filter Decide applies before ranking
 - Role instances per ROLES.md — what fills Steward, Critic, Auditor, Owner (distinct instances; a role filled by the same instance as another is void)
 - Any deviations from the constitution (METHODOLOGY.md, CYCLE.md, ARCHITECTURE.md Engineering Invariants) that this project has accepted and why
 -->
