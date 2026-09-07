@@ -11,6 +11,7 @@
 | `HORIZONS.md` | Horizon doctrine — terminal bound, filter-before-rank, profile-not-total, marginal allocation, error signatures |
 | `ROLES.md` | Role separation — Steward, Critic, Auditor, Owner; no role grades itself |
 | `IMPLEMENTATION.md` | Task state — checkboxes updated in place |
+| `docs/scope.md` | Standing strategy artifact — maximal scope ladder, terminal form, compiled terminal-bound constraints. Orient measures against it every cycle; not a discovery output |
 | GitHub issue per phase | Failure record — comments capture attempts and decisions |
 | `docs/` outputs | Phase 0 discovery artifacts — hard gates for dependent phases |
 
@@ -65,6 +66,7 @@ Discovery outputs (Phase 0) are hard prerequisites for implementation phases. No
 - **Checkboxes** — task complete or not. Binary.
 - **Issue comments** — everything else: failed attempts, decisions, partial findings, blockers.
 - **`docs/`** — structured discovery outputs. Committed, permanent, readable by any session.
+- **`docs/scope.md`** — standing strategy artifact. Scope ladder, terminal form, compiled terminal-bound constraints (HORIZONS.md). Updated by Orient and by Revision; never provisional.
 - **`CLAUDE.md`** — current phase pointer only. Updated when phase changes.
 - **`docs/walrus-YYYY-MM-DD.md`** — WaLRuS-DATA session summary. Written at session end, committed.
 
