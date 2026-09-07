@@ -14,13 +14,18 @@ Question answered: *where is the project on its ladder, and what is missing to r
 
 ### 2. Decide — the next required atomic step
 
-Select exactly one step satisfying all three:
+Select exactly one step satisfying all four:
 
 - **Atomic** — completable in one session, one commit unit, verifiable
 - **Gated** — depends on no undiscovered interface (METHODOLOGY.md Phase Gate)
-- **Maximal** — highest RAROC among steps that advance scope position
+- **Choosable** — requires no unsanctioned external dependency
+- **Maximal** — highest RAROC among choosable steps that advance scope position
+
+**Decomposability** — atomicity constrains step granularity, never goal eligibility. A direction (a multi-step goal) that outranks the current step on RAROC must be decomposed into atomic steps and scored; it may not be dismissed as infeasible. RAROC ranks directions; Decide picks the next atomic step toward the top-ranked direction.
 
 RAROC = (V × P) / C — V: value protected or unlocked (1–5), P: probability it materializes (0–1), C: cost to remediate or execute (1–5).
+
+Every step that advances scope position is scored and its value made visible — including steps requiring unsanctioned external dependencies. Whenever the top-scoring feasible step is unchoosable solely for lack of sanction, it is surfaced to the Owner as a sanction decision — whether or not a lower-scoring choosable step executes. "Choosable" governs whether the cycle stalls, never whether a step is scored or surfaced.
 
 Output: the step, recorded as a GitHub issue or an `IMPLEMENTATION.md` task, together with its expected-RAROC forecast (V, P, C) — the value that success must demonstrate.
 Never queue a second step; the next is chosen only after the current one completes.
@@ -31,7 +36,7 @@ TDD per METHODOLOGY.md — tests first. Done means the Definition of Success hol
 
 ### 4. Audit — evaluate against the constitution
 
-Post-Phase Audit procedure (METHODOLOGY.md), generalized:
+Post-Phase Audit procedure (METHODOLOGY.md), generalized, executed per the role separation in `ROLES.md`: the Auditor verifies, the Critic falsifies, the Steward does not grade its own work.
 
 1. `ARCHITECTURE.md` interfaces versus current code
 2. Coverage run; uncovered lines classified *Acceptable* or *Gap*
@@ -80,9 +85,17 @@ External prerequisites are real: they block the deployments they gate, and gap a
 ## Selection function (compressed)
 
 ```
-next_step = argmax  RAROC(s)   over   s ∈ feasible
-feasible  = { s : advances scope position ∧ passes phase gate ∧ atomic
-                ∧ requires no unsanctioned external dependency }
+feasible  = { s : advances scope position ∧ passes phase gate ∧ atomic }
+choosable = { s ∈ feasible : requires no unsanctioned external dependency }
+scored    = feasible — every feasible step is scored and made visible, sanctioned or not
+decompose = atomicity constrains step granularity, never goal eligibility; a direction
+            that outranks the current step is decomposed into atomic steps and scored,
+            never dismissed whole; RAROC ranks directions, Decide picks the next atomic
+            step toward the top-ranked direction
+next_step = argmax RAROC(s) over s ∈ choosable, if choosable ≠ ∅
+            else no step executes; the top-scoring feasible step awaits sanction
+surface   = whenever the top-scoring feasible step is unchoosable, escalate it to the
+            Owner as a sanction decision, whether or not a choosable step executes
 proof     = working in production ∧ expected RAROC actively demonstrated
 ```
 
