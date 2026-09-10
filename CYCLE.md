@@ -35,8 +35,6 @@ RAROC = (V × P) / C — V: value protected or unlocked (1–5), P: probability 
 
 Every step that advances scope position is scored and its value made visible — including steps requiring unsanctioned external dependencies. Whenever the top-scoring feasible step is unchoosable solely for lack of sanction, it is surfaced to the Owner as a sanction decision — whether or not a lower-scoring choosable step executes. "Choosable" governs whether the cycle stalls, never whether a step is scored or surfaced.
 
-**Allocation is Decide** — whether a tool is invoked, which executor runs the work (cycle, subagent, human), and what is handed over are scored decisions under this same selection function — never habit, never post-hoc. C may carry a medium annotation (tokens / wall-time / attention) alongside its scalar; where the medium is irrecoverable margin — Owner attention under the compiled terminal-bound constraints (`docs/scope.md`) — the filter runs before scoring: invocation on work the cycle can do is excluded, whatever the near return. Category selection is banned in both directions: no path wins for being Owner-free, none loses for being Owner-gated; all candidates score. The score precedes the invocation and is recorded where the step lives.
-
 Output: the step, recorded as a GitHub issue or an `IMPLEMENTATION.md` task, together with its expected-RAROC forecast (V, P, C) — the value that success must demonstrate.
 Never queue a second step; the next is chosen only after the current one completes.
 
@@ -96,10 +94,6 @@ External prerequisites are real: they block the deployments they gate, and gap a
 
 Disposition is legislative. Deciding that a commitment has reached Acceptance — longevity (preserve the substrate, extend current positions) versus seeding (fund a successor, release the substrate) — and deriving a successor at Reinception are Owner acts of the sanction class: surfaced by the cycle with its evidence, decided outside it, recorded on the relevant issue. The cycle never disposes of the entity it runs in.
 
-**Human-tool interface discipline** — the Owner, and any human in the operational loop, is treated as a tool of the cycle: a component with an interface, a latency, a cost, and reserved acts only it can perform. Tool treatment governs operational invocation only: well-formed requests, asynchronous processing, no bare questions. Constitutional standing is untouched: the Owner stands outside the cycle as its legislative layer; the sanction-await branch of the selection function stands as designed. No direction occupies a waiting state without concurrent motion. Where the project measures conflict produced by minds it did not author, arena minds and live participants are measurement surface, not tools — tool treatment there corrupts what the project measures.
-
-**Turk decomposition** — a dependency on a human is mislabeled cycle work until decomposed: the machine portion is reclaimed and executing; the residue, if any, is a reserved act invoked as a single packet — act statement, options with evidence, recommendation, drafted artifact, output surface, concurrent motion, score line. A bare question is a malformed invocation. Silence handling is pre-declared at invocation without calendar: doctrinal disposition where doctrine answers, else concurrent motion continues. Reserved classes with their homes: metric booking and coercion-scope designation (the compiled terminal-bound margin table) · mission disposition (the refinement-level table) · sanction and constitutional amendment (this file, `ROLES.md`) · secret minting (the project's declared provisioning practice, `IMPLEMENTATION.md`). Open invocations live in `docs/pending-owner.md` (template: `docs/pending-owner-TEMPLATE.md`); the row schema is machine-gated by the project's record-law suite; phrase resolution and the allocation scan are Tier 2 audit procedure (`METHODOLOGY.md` Post-Phase Audit item 5).
-
 ---
 
 ## Selection function (compressed)
@@ -122,11 +116,6 @@ decompose = atomicity constrains step granularity, never goal eligibility; a dir
             step toward the top-ranked direction
 next_step = argmax RAROC(s) over s ∈ choosable, if choosable ≠ ∅
             else no step executes; the top-scoring feasible step awaits sanction
-allocate  = every invocation of a tool, subagent, or human is a scored decision under
-            this function — C annotated with the tool's medium; where the medium is
-            irrecoverable margin, the filter runs before scoring; category selection
-            banned both directions; the score precedes the invocation and is recorded
-            where the step lives
 surface   = whenever the top-scoring feasible step is unchoosable, escalate it to the
             Owner as a sanction decision, whether or not a choosable step executes
 revise    = repairs locally successful ∧ gap class recurs ⇒ decomposition expired;
