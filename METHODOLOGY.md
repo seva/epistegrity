@@ -67,8 +67,20 @@ Discovery outputs (Phase 0) are hard prerequisites for implementation phases. No
 - **Issue comments** — everything else: failed attempts, decisions, partial findings, blockers.
 - **`docs/`** — structured discovery outputs. Committed, permanent, readable by any session.
 - **`docs/scope.md`** — standing strategy artifact. Scope ladder, terminal form, compiled terminal-bound constraints (HORIZONS.md). Updated by Orient and by Revision; never provisional.
-- **`AGENTS.md`** — current phase pointer only. Updated when phase changes.
+- **`AGENTS.md`** — session bootstrap: prime directive, behavioral rules, declared conventions, current-phase pointer. Updated when phase changes. Consolidation beyond pointer-only is a declared adaptation, not a deviation.
 - **`docs/walrus-YYYY-MM-DD.md`** — WaLRuS-DATA session summary. Written at session end, committed.
+
+---
+
+## Record Economics
+
+Prose does not execute; lessons without enforcers are wishes.
+
+- **One home per fact.** Verification narratives live in their verdict/record file (`docs/`) or on the issue they were filed to; every other surface points at that home. Each duplicate of a narrative multiplies the drift surface. Pointers at `docs/` homes are existence-verified by the gate; issue references are accepted as declared.
+- **Content standards.** `ARCHITECTURE.md` lines = decision + choice + rationale + pointers, under their declared character budget (default ≤600, gated). `IMPLEMENTATION.md` = task state + pointers. `AGENTS.md` = bootstrap pointers + declarations. Dated chronicles belong in dated records (issues, WaLRuS, verdict files), never in living rows.
+- **Digest step.** Inline repair of a falsified claim is immediate honesty; the same cycle then compresses the repaired surface back to its content standard, pointing at the verdict/record. Corrections add facts, not prose.
+- **Lesson-Mechanism rule.** A recorded lesson must name its executing enforcer (a test, a gate, or a checklist item in a tool) or be explicitly marked ADVISORY (unenforced). Unenforced lessons are the gate backlog.
+- **Property enumeration** (extends Post-Phase Audit step 4): every declared property in touched records ("pinned", "identical", "bounded", "100%", "never") is mapped to its executing check or marked UNENFORCED.
 
 ---
 
@@ -79,7 +91,7 @@ After each phase completion, before writing the WaLRuS, audit the current projec
 1. **ARCHITECTURE.md** — verify every component's key interface matches current code signatures
 2. **Coverage** — run coverage; classify uncovered lines as *Acceptable* (document why) or *Gap* (add test)
 3. **Cross-cutting** — scan for placeholder content, missing `.gitignore` entries, undocumented error types
-4. **Declared claims vs evidence** — every constitutional statement that asserts something about the world (assumptions, measured numbers, verification dates) is checked against the project's evidence (`docs/`, issues, runs); stale or falsified claims are corrected in the same commit as the falsifying evidence, or marked open
+4. **Declared claims vs evidence** — every constitutional statement that asserts something about the world (assumptions, measured numbers, verification dates) is checked against the project's evidence (`docs/`, issues, runs); stale or falsified claims are corrected in the same commit as the falsifying evidence, or marked open. Then, per Record Economics: enumerate every declared property in touched records and map each to its executing check, or mark it UNENFORCED
 5. **Engineering invariants** — scan new and changed code against `ARCHITECTURE.md` Engineering Invariants and Banned Patterns; violations are closed or declared as documented deviations in `AGENTS.md` Conventions
 6. **Horizon integrity** — error-signature scan per `HORIZONS.md`: override (continuation without a successor forecast), unbounded terminal position, level-versus-margin comparisons in the decision record, stale decomposition (repairs locally successful, gap class recurring)
 
