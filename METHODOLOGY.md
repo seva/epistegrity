@@ -8,7 +8,7 @@
 |---|---|
 | `AGENTS.md` | Session bootstrap |
 | `CYCLE.md` | Operating loop — step selection, Definition of Success, autonomy |
-| `HORIZONS.md` | Horizon doctrine — terminal bound, filter-before-rank, profile-not-total, marginal allocation, error signatures |
+| `HORIZONS.md` | Horizon doctrine — terminal bound, filter-before-rank, profile-not-total, marginal allocation, conditional commitments, error signatures |
 | `ROLES.md` | Role separation — Steward, Critic, Auditor, Owner; no role grades itself |
 | `IMPLEMENTATION.md` | Task state — checkboxes updated in place |
 | `docs/scope.md` | Standing strategy artifact — maximal scope ladder, terminal form, compiled terminal-bound constraints. Orient measures against it every cycle; not a discovery output |
@@ -93,7 +93,7 @@ After each phase completion, before writing the WaLRuS, audit the current projec
 3. **Cross-cutting** — scan for placeholder content, missing `.gitignore` entries, undocumented error types
 4. **Declared claims vs evidence** — every constitutional statement that asserts something about the world (assumptions, measured numbers, verification dates) is checked against the project's evidence (`docs/`, issues, runs); stale or falsified claims are corrected in the same commit as the falsifying evidence, or marked open. Then, per Record Economics: enumerate every declared property in touched records and map each to its executing check, or mark it UNENFORCED
 5. **Engineering invariants** — scan new and changed code against `ARCHITECTURE.md` Engineering Invariants and Banned Patterns; violations are closed or declared as documented deviations in `AGENTS.md` Conventions
-6. **Horizon integrity** — error-signature scan per `HORIZONS.md`: override (continuation without a successor forecast), unbounded terminal position, level-versus-margin comparisons in the decision record, stale decomposition (repairs locally successful, gap class recurring)
+6. **Horizon integrity** — error-signature scan per `HORIZONS.md`: override (continuation without a successor forecast), unbounded terminal position, level-versus-margin comparisons in the decision record, stale decomposition (repairs locally successful, gap class recurring), entitlement at threshold (activation treated as allocation), unregistered threshold crossing (an Operating commitment's Continuation/Exit condition met with no transition recorded)
 
 Items 1–3 and 5 check internal consistency (code↔records↔constitution); item 4 checks external consistency (claims↔world); item 6 checks the plan against the horizon doctrine. Internal consistency alone cannot catch a claim that survives its own falsification.
 

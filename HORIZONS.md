@@ -60,6 +60,33 @@ Score return per position; do not aggregate. Now is measured (recoverable denomi
 
 ---
 
+## Conditional commitments
+
+Canonical prose: `docs/resonance-matrix.md` (the Conditional Resonance Matrix, "Yes, when" protocol). A commitment is governed by conditions, not binary approval: entry, continuation, and exit are checkable claims stated at the moment capital is committed — deprecation parameters exist from approval, not from decay.
+
+**Admissibility bounds "never No."** An admissible proposal is never rejected outright; it is a "Yes, when" — an activation threshold stated in independently observable evidence, awaiting resolution. The burden of proof sits with the proposer: gather the evidence, don't fight a gatekeeper. Inadmissible proposals — negative at the terminal bound, or spending irrecoverable margin for recoverable return — are filtered out before ranking and receive No. Keeping them alive as conditional approvals is the carrying cost the latent portfolio exists to control.
+
+**Threshold ≠ allocation.** Activation evidence establishes eligibility, never entitlement. A commitment deploys when: *admissible ∧ activation evidence valid ∧ next increment selected* by marginal comparison against eligible alternatives. A met threshold that skips the selection function is allocation by queue position — the entitlement-at-threshold signature.
+
+**State ≠ funding.** Lifecycle states — Latent → Committing → Operating → Retiring → Closed — are distinct from the funding predicate, which is evaluated on any state. An Operating commitment can warrant exit capital while expansion capital no longer pays; conflating the two strands the exit. The lifecycle bounds one commitment, not the entity ladder: Closed is a release of margin, not a goal-shaped terminus — the margin-intact and margin-spent paths to it are distinguished by the Exit field.
+
+**Sunset is margin-based, not decay-based.** The exit trigger fires when continued operation threatens the margin required for orderly transition — not when returns merely decline. Expansion capital and exit capital are separate denominators; exit is often funded after expansion stops paying. A fired exit trigger establishes eligibility for exit capital, never entitlement: the transition still runs the selection function — what changes is that exit capital competes and expansion capital no longer does. This is exit management, set 7 spans 4–5; the "Sunset when" condition is a check on the margin term, fired while exit capacity remains.
+
+**Hysteresis.** Entry and exit thresholds carry persistence rules — a reading holds across N observations before it fires a state change — so noise near a threshold cannot cycle deploy/withdraw. Persistence counts observations of the relevant drift term, never calendar time, and it gates the firing of state changes only: readings still expire on drift, and hysteresis never extends a reading's life. A persistence rule is itself a forecast and requires a resolution record like everything else.
+
+**The conditional commitment record** — instantiated on the commitment's issue, alongside the V/P/C forecast, before execution:
+
+| Field | Question it answers |
+|---|---|
+| Activation | What independently observable evidence makes this eligible? ("Yes, when…") |
+| Allocation | Why does its next increment outrank eligible alternatives now? |
+| Continuation | What evidence keeps the commitment warranted while Operating? |
+| Invalidation | What finding defeats the thesis or expires the evidence? |
+| Exit | What margin condition triggers Retiring; what capacity must survive to reach Closed? |
+| Authority | Who verifies the evidence and rules the transition? (No role grades itself; Acceptance-class disposition remains Owner-reserved.) |
+
+---
+
 ## Set 5 mechanics
 
 Three states (Now, Far, Unreachable) and two checks (Near — first crossing, a successor prediction must be made; End — last crossing, no successor prediction is useful). States bound the predictive region; checks are the only points where the world scores what was held.
@@ -98,3 +125,4 @@ Spans: **1–3 risk management** (responses exist, capital recoverable, readings
 | Cross-scale mismatch | Commitment scored on the entity's horizon, spending the operator's margin | Name whose substrate each term drifts in |
 | Reinstatement | Successor derived by importing old terms, thresholds, rules | Rebuild the term set from the changed substrate |
 | Under-refinement | Commitment run at a set too coarse to hold its failure mode | Self-concealing — check the split signals |
+| Entitlement at threshold | Activation evidence treated as allocation ("threshold met, so fund it") | Run the selection function; a met threshold establishes eligibility only |

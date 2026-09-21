@@ -14,6 +14,8 @@ Question answered: *where is the project on its ladder, and what is missing to r
 
 Horizon check (`HORIZONS.md`): the compiled terminal-bound constraints are compared against the current reading — one comparison, no recomputation. A crossing found fires re-derivation of the affected commitment's far positions; a crossing absorbed without registering is a gap. Realized RAROC is itself a reading: it expires with substrate drift, and calibration older than the drift it measured is a stale claim, not evidence (Audit item 4 applies).
 
+Commitment sweep (`HORIZONS.md`, Conditional commitments): each Operating commitment's Continuation and Exit conditions are compared against the current reading, with the declared hysteresis applied. A threshold crossed without a registered transition is a gap. A met Exit condition makes the transition eligible for exit capital even when expansion no longer pays; eligibility, not entitlement — the transition step still runs the selection function.
+
 ### 2. Decide — the next required atomic step
 
 Select exactly one step satisfying all four:
@@ -35,7 +37,7 @@ RAROC = (V × P) / C — V: value protected or unlocked (1–5), P: probability 
 
 Every step that advances scope position is scored and its value made visible — including steps requiring unsanctioned external dependencies. Whenever the top-scoring feasible step is unchoosable solely for lack of sanction, it is surfaced to the Owner as a sanction decision — whether or not a lower-scoring choosable step executes. "Choosable" governs whether the cycle stalls, never whether a step is scored or surfaced.
 
-Output: the step, recorded as a GitHub issue or an `IMPLEMENTATION.md` task, together with its expected-RAROC forecast (V, P, C) — the value that success must demonstrate.
+Output: the step, recorded as a GitHub issue or an `IMPLEMENTATION.md` task, together with its expected-RAROC forecast (V, P, C) — the value that success must demonstrate. Steps that open or extend a commitment carry the conditional commitment record (`HORIZONS.md`, Conditional commitments — six fields, Activation through Authority), stated before execution, so the withdrawal conditions exist from the moment capital is committed. A met activation threshold makes a step eligible; selection still runs (entitlement at threshold is an error signature).
 Never queue a second step; the next is chosen only after the current one completes.
 
 ### 3. Execute
@@ -51,7 +53,7 @@ Post-Phase Audit procedure (METHODOLOGY.md), generalized, executed per the role 
 3. Cross-cutting: placeholders, `.gitignore`, record sync (issues ↔ `IMPLEMENTATION.md`), session-protocol compliance
 4. Declared claims versus evidence: constitutional statements about the world (assumptions, measured numbers, verification dates) checked against `docs/` and issue evidence; stale or falsified claims corrected or marked open
 5. Engineering invariants: new and changed code scanned against `ARCHITECTURE.md` Engineering Invariants and Banned Patterns; violations closed or declared as deviations
-6. Horizon integrity: error-signature scan per `HORIZONS.md` — override (continuation without a successor forecast), unbounded terminal position, level-versus-margin comparisons in the record, stale decomposition, under-refinement against the split signals
+6. Horizon integrity: error-signature scan per `HORIZONS.md` — override (continuation without a successor forecast), unbounded terminal position, level-versus-margin comparisons in the record, stale decomposition, under-refinement against the split signals, entitlement at threshold, unregistered threshold crossing
 
 Output: classified gap list. Zero gaps is the only passing state.
 
@@ -116,6 +118,11 @@ decompose = atomicity constrains step granularity, never goal eligibility; a dir
             step toward the top-ranked direction
 next_step = argmax RAROC(s) over s ∈ choosable, if choosable ≠ ∅
             else no step executes; the top-scoring feasible step awaits sanction
+commit    = evaluated after next_step, on the step that opens or extends a commitment:
+            s survives filter ∧ activation evidence valid ∧ s = next_step
+            (HORIZONS.md, Conditional commitments) — a met threshold establishes
+            eligibility, never entitlement; Operating commitments are swept each
+            Orient for Continuation/Exit with declared hysteresis
 surface   = whenever the top-scoring feasible step is unchoosable, escalate it to the
             Owner as a sanction decision, whether or not a choosable step executes
 revise    = repairs locally successful ∧ gap class recurs ⇒ decomposition expired;
