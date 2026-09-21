@@ -35,7 +35,7 @@ Select exactly one step satisfying all four:
 
 RAROC = (V × P) / C — V: value protected or unlocked (1–5), P: probability it materializes (0–1), C: cost to remediate or execute (1–5). P is the epistemic discount; distance in time discounts nothing by itself.
 
-Default Activation for recoverable scalar-scored steps is forecast RAROC ≥ 1, with V, P, C named on a channel independent of the claim. Steps committing irrecoverable margin take no scalar default — their Activation is a checkable profile condition at the refinement set their cost licenses (`HORIZONS.md`, Conditional commitments). The floor is universal for recoverable scalar steps: a step forecasting below it is ineligible, and argmax runs over eligible steps only. When choosable steps exist but none is eligible, none executes — the best sub-unit direction is surfaced to the Owner as a legislative signal (`surface` in the selection function); that branch never ends silently.
+Default Activation for recoverable scalar-scored steps is forecast RAROC ≥ 1, with V, P, C named on a channel independent of the claim. Steps committing irrecoverable margin take no scalar default — their Activation is a checkable profile condition at the refinement set their cost licenses (`HORIZONS.md`, Conditional commitments). The floor is universal for recoverable scalar steps: a step forecasting below it is ineligible, and argmax runs over eligible steps only. When choosable steps exist but none is eligible, none executes — the best sub-unit direction is surfaced to the Owner as a legislative signal (`surface` in the selection function); that branch never ends silently. Sub-unit = forecast RAROC < 1, below breakeven on the unit of account; the signal carries the best sub-floor choosable step and the direction it belongs to.
 
 Every step that advances scope position is scored and its value made visible — including steps requiring unsanctioned external dependencies. Whenever the top-scoring feasible step is unchoosable solely for lack of sanction, it is surfaced to the Owner as a sanction decision — whether or not a lower-scoring choosable step executes. "Choosable" governs whether the cycle stalls, never whether a step is scored or surfaced.
 
@@ -63,7 +63,7 @@ Output: classified gap list. Zero gaps is the only passing state.
 
 Gaps ranked by RAROC, executed in order. Each gap is an atomic step of a repair sub-cycle — the same Definition of Success applies: return to step 4 after repairs until the audit passes clean.
 
-**Revision escalation** (`HORIZONS.md`): repair inside the current decomposition is Adaptation. When repairs repeatedly succeed locally while the same audit findings or gap class recurs — no aggregate recovery — the decomposition itself has expired. Escalate to Revision: rebuild the phase and term structure (`IMPLEMENTATION.md`, `docs/scope.md`, declared non-drifting terms) instead of repairing within it. Nothing signals this; the recurrence record is the only trigger.
+**Revision escalation** (`HORIZONS.md`): repair inside the current decomposition is Adaptation. When repairs repeatedly succeed locally while the same audit findings or gap class recurs — no aggregate recovery — the decomposition itself has expired. Escalate to Revision: rebuild the phase and term structure (`IMPLEMENTATION.md`, `docs/scope.md`, declared non-drifting terms) instead of repairing within it. The recurrence record is one trigger; a decomposition that no longer yields any feasible step before the terminal form (feasible = ∅, selection function) is the second.
 
 ### 6. Repeat
 
@@ -122,8 +122,10 @@ eligible  = { s ∈ choosable : s meets its Activation condition — forecast RA
             recoverable scalar steps; the licensed profile condition for steps committing
             irrecoverable margin (HORIZONS.md, Conditional commitments) }
 next_step = argmax RAROC(s) over s ∈ eligible, if eligible ≠ ∅
-            else no step executes; choosable = ∅ ⇒ the top-scoring feasible step awaits
-            sanction; eligible = ∅ with choosable ≠ ∅ ⇒ sub-unit signal (surface)
+            else no step executes; choosable = ∅ with feasible ≠ ∅ ⇒ the top-scoring
+            feasible step awaits sanction; eligible = ∅ with choosable ≠ ∅ ⇒ sub-unit
+            signal (surface); feasible = ∅ ⇒ neither signal has a referent — Orient
+            resolves which state obtains (surface)
 commit    = evaluated after next_step, on the step that opens or extends a commitment:
             s survives filter ∧ activation evidence valid ∧ s = next_step
             (HORIZONS.md, Conditional commitments) — a met threshold establishes
@@ -133,10 +135,13 @@ surface   = two legislative signals to the Owner: the top-scoring feasible step 
             unchoosable ⇒ sanction decision, whether or not a choosable step executes;
             choosable ≠ ∅ and every choosable step falls below its Activation condition
             ⇒ sub-unit signal — the best sub-unit direction is surfaced, never a
-            silent stall. Registered corner (pre-existing, named not legislated):
-            feasible = ∅ leaves both signals without a referent
-revise    = repairs locally successful ∧ gap class recurs ⇒ decomposition expired;
-            rebuild term/phase structure instead of repairing within it
+            silent stall. feasible = ∅ routes to Orient, not to a signal: the terminal
+            form is reached (convergence, Termination) or the decomposition yields no
+            steps (expired — escalate to Revision, joining the recurrence record as a
+            second trigger)
+revise    = (repairs locally successful ∧ gap class recurs) ∨ feasible = ∅ before the
+            terminal form ⇒ decomposition expired; rebuild term/phase structure instead
+            of repairing within it
 proof     = working in production ∧ expected RAROC actively demonstrated
 ```
 
