@@ -23,7 +23,7 @@ Select exactly one step satisfying all four:
 - **Atomic** — completable in one session, one commit unit, verifiable
 - **Gated** — depends on no undiscovered interface (METHODOLOGY.md Phase Gate)
 - **Choosable** — requires no unsanctioned external dependency
-- **Maximal** — highest RAROC among choosable steps that advance scope position
+- **Maximal** — highest RAROC among choosable steps that advance scope position and meet their Activation condition
 
 **Decomposability** — atomicity constrains step granularity, never goal eligibility. A direction (a multi-step goal) that outranks the current step on RAROC must be decomposed into atomic steps and scored; it may not be dismissed as infeasible. Ranking ranks directions; Decide picks the next atomic step toward the top-ranked direction.
 
@@ -35,7 +35,7 @@ Select exactly one step satisfying all four:
 
 RAROC = (V × P) / C — V: value protected or unlocked (1–5), P: probability it materializes (0–1), C: cost to remediate or execute (1–5). P is the epistemic discount; distance in time discounts nothing by itself.
 
-Default Activation for recoverable scalar-scored steps is forecast RAROC ≥ 1, with V, P, C named on a channel independent of the claim. Steps committing irrecoverable margin take no scalar default — their Activation is a checkable profile condition at the refinement set their cost licenses (`HORIZONS.md`, Conditional commitments).
+Default Activation for recoverable scalar-scored steps is forecast RAROC ≥ 1, with V, P, C named on a channel independent of the claim. Steps committing irrecoverable margin take no scalar default — their Activation is a checkable profile condition at the refinement set their cost licenses (`HORIZONS.md`, Conditional commitments). The floor is universal for recoverable scalar steps: a step forecasting below it is ineligible, and argmax runs over eligible steps only. When choosable steps exist but none is eligible, none executes — the best sub-unit direction is surfaced to the Owner as a legislative signal (`surface` in the selection function); that branch never ends silently.
 
 Every step that advances scope position is scored and its value made visible — including steps requiring unsanctioned external dependencies. Whenever the top-scoring feasible step is unchoosable solely for lack of sanction, it is surfaced to the Owner as a sanction decision — whether or not a lower-scoring choosable step executes. "Choosable" governs whether the cycle stalls, never whether a step is scored or surfaced.
 
@@ -118,15 +118,23 @@ decompose = atomicity constrains step granularity, never goal eligibility; a dir
             that outranks the current step is decomposed into atomic steps and scored,
             never dismissed whole; ranking ranks directions, Decide picks the next atomic
             step toward the top-ranked direction
-next_step = argmax RAROC(s) over s ∈ choosable, if choosable ≠ ∅
-            else no step executes; the top-scoring feasible step awaits sanction
+eligible  = { s ∈ choosable : s meets its Activation condition — forecast RAROC ≥ 1 for
+            recoverable scalar steps; the licensed profile condition for steps committing
+            irrecoverable margin (HORIZONS.md, Conditional commitments) }
+next_step = argmax RAROC(s) over s ∈ eligible, if eligible ≠ ∅
+            else no step executes; choosable = ∅ ⇒ the top-scoring feasible step awaits
+            sanction; eligible = ∅ with choosable ≠ ∅ ⇒ sub-unit signal (surface)
 commit    = evaluated after next_step, on the step that opens or extends a commitment:
             s survives filter ∧ activation evidence valid ∧ s = next_step
             (HORIZONS.md, Conditional commitments) — a met threshold establishes
             eligibility, never entitlement; Operating commitments are swept each
             Orient for Continuation/Exit with declared hysteresis
-surface   = whenever the top-scoring feasible step is unchoosable, escalate it to the
-            Owner as a sanction decision, whether or not a choosable step executes
+surface   = two legislative signals to the Owner: the top-scoring feasible step is
+            unchoosable ⇒ sanction decision, whether or not a choosable step executes;
+            choosable ≠ ∅ and every choosable step falls below its Activation condition
+            ⇒ sub-unit signal — the best sub-unit direction is surfaced, never a
+            silent stall. Registered corner (pre-existing, named not legislated):
+            feasible = ∅ leaves both signals without a referent
 revise    = repairs locally successful ∧ gap class recurs ⇒ decomposition expired;
             rebuild term/phase structure instead of repairing within it
 proof     = working in production ∧ expected RAROC actively demonstrated
