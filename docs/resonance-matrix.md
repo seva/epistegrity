@@ -15,7 +15,7 @@ This framework codifies the transition of system states (False $\rightarrow$ Tru
 
 To operationalize this in architecture reviews or strategic planning, remove binary approvals (Approved/Rejected) and replace them with defined state-change equations.
 
-A proposal is never "No." It is a "Yes" waiting for its variables to resolve.
+Admissible proposals are "Yes, when." Inadmissible proposals — filter failures — are No.
 
 * **Architectural Example:** *"Yes, we can migrate the transaction engine to the new microservice, **when** the legacy data store is fully decoupled and P99 latency is proven under simulated peak load."*
 * **Product Strategy Example:** *"Yes, we will build the advanced analytics tier, **when** we observe a 20% adoption rate of the base reporting module, proving the activation energy is justified."*

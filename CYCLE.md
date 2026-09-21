@@ -35,6 +35,8 @@ Select exactly one step satisfying all four:
 
 RAROC = (V × P) / C — V: value protected or unlocked (1–5), P: probability it materializes (0–1), C: cost to remediate or execute (1–5). P is the epistemic discount; distance in time discounts nothing by itself.
 
+Default Activation for recoverable scalar-scored steps is forecast RAROC ≥ 1, with V, P, C named on a channel independent of the claim. Steps committing irrecoverable margin take no scalar default — their Activation is a checkable profile condition at the refinement set their cost licenses (`HORIZONS.md`, Conditional commitments).
+
 Every step that advances scope position is scored and its value made visible — including steps requiring unsanctioned external dependencies. Whenever the top-scoring feasible step is unchoosable solely for lack of sanction, it is surfaced to the Owner as a sanction decision — whether or not a lower-scoring choosable step executes. "Choosable" governs whether the cycle stalls, never whether a step is scored or surfaced.
 
 Output: the step, recorded as a GitHub issue or an `IMPLEMENTATION.md` task, together with its expected-RAROC forecast (V, P, C) — the value that success must demonstrate. Steps that open or extend a commitment carry the conditional commitment record (`HORIZONS.md`, Conditional commitments — six fields, Activation through Authority), stated before execution, so the withdrawal conditions exist from the moment capital is committed. A met activation threshold makes a step eligible; selection still runs (entitlement at threshold is an error signature).
