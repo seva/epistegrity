@@ -25,3 +25,9 @@ REQUIRED before writing any file paths in IMPLEMENTATION.md:
 - Role instances per ROLES.md — what fills Steward, Critic, Auditor, Owner (distinct instances; a role filled by the same instance as another is void)
 - Any deviations from the constitution (METHODOLOGY.md, CYCLE.md, ARCHITECTURE.md Engineering Invariants) that this project has accepted and why
 -->
+
+## Procedure adoption
+
+- RAROC pipeline: see `docs/raroc-pipeline.md` (optional procedure; `METHODOLOGY.md` / `CYCLE.md` / `HORIZONS.md` win on conflict).
+- Declared adaptation: docs-homing beyond pointer-only (procedure lives in `docs/`, this file carries pointer + instances).
+- Role instances: Steward = this session (MetaThrone/OpenCode); Critic = fresh Task sub-agent A; Auditor = fresh Task sub-agent B (distinct task_ids); Owner = Seva Lapsha. No instance fills two roles.
